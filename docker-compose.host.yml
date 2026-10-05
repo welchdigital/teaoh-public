@@ -1,0 +1,11 @@
+services:
+  teaoh:
+    network_mode: host
+    ports: !reset []
+    environment:
+      TEAOH_SERVER_PORT: ${TEAOH_TCP_PORT:-8078}
+      TEAOH_SERVER_WEBSOCKET_PORT: ${TEAOH_WS_PORT:-8079}
+      TEAOH_DATABASE_HOST: 127.0.0.1
+      TEAOH_DATABASE_PORT: ${TEAOH_DB_PORT:-5432}
+      TEAOH_ADMIN_HOST: 127.0.0.1
+      TEAOH_ADMIN_PORT: ${TEAOH_ADMIN_PORT:-8080}

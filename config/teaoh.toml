@@ -1,0 +1,131 @@
+[server]
+host = "0.0.0.0"
+port = 8078
+websocket_enabled = true
+websocket_port = 8079
+max_connections = 300
+max_connections_per_ip = 3
+max_players = 200
+min_version = "0.0.28"
+max_version = "0.3.29"
+save_rate = 5
+lang = "en"
+generate_pub = false
+trust_proxy = false
+trusted_proxies = ["127.0.0.0/8", "::1"]
+
+[database]
+driver = "sqlite"
+sqlite_path = "data/teaoh.db"
+host = "127.0.0.1"
+port = 5432
+name = "teaoh"
+user = "teaoh"
+password = "teaoh"
+
+[account]
+max_characters = 3
+min_password_length = 6
+max_password_length = 64
+email_validation = false
+recovery = false
+
+[smtp]
+host = ""
+port = 587
+secure = false
+username = ""
+password = ""
+from_name = ""
+from_address = ""
+
+[character]
+max_skin = 3
+max_hair_style = 20
+max_hair_color = 9
+min_name_length = 4
+max_name_length = 12
+first_character_admin = true
+
+[new_character]
+spawn_map = 192
+spawn_x = 6
+spawn_y = 6
+home = "Wanderer"
+
+[world]
+exp_multiplier = 1
+stat_points_per_level = 3
+skill_points_per_level = 4
+spawn_map = 192
+spawn_x = 7
+spawn_y = 6
+rescue_map = 4
+rescue_x = 24
+rescue_y = 24
+jail_map = 76
+jail_x = 5
+jail_y = 4
+drop_protect_player = 5
+drop_protect_npc = 30
+global_pk = false
+chest_spawn_on_boot = true
+tick_rate = 125
+
+[jail]
+free_map = 76
+free_x = 9
+free_y = 11
+
+[npcs]
+instant_spawn = true
+freeze_on_empty_map = true
+
+[combat]
+use_class_formulas = false
+enforce_weight = true
+
+[guild]
+min_players = 10
+create_cost = 50000
+recruit_cost = 1000
+min_deposit = 1000
+recruit_rank = 1
+
+[board]
+admin_board = 5
+
+[auto_pickup]
+enabled = false
+
+[map_saves]
+enabled = true
+
+[admin]
+enabled = true
+host = "127.0.0.1"
+port = 8080
+key = ""
+cors_origin = ""
+allowed_hosts = []
+
+[sln]
+enabled = false
+url = "https://apollo-games.com/SLN/sln.php/"
+host = ""
+port = 0
+server_name = "teaoh"
+site = ""
+rate = 5
+zone = ""
+client_url = ""
+discord = ""
+facebook = ""
+twitter = ""
+youtube = ""
+
+[data]
+dir = "data"
+
+[log]
+level = "info"

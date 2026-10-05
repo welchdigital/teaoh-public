@@ -1,0 +1,40 @@
+import type { Kysely } from 'kysely';
+import type { EmailTemplates, Mailer, SlidingWindowLimiter } from './account/email.ts';
+import type { AuthThrottle } from './account/throttle.ts';
+import type { Config } from './config.ts';
+import type { DropTables } from './data/drops.ts';
+import type { Formulas } from './data/formulas.ts';
+import type { PubData } from './data/pub-data.ts';
+import type { DB } from './db/schema.ts';
+import type { Player } from './player/player.ts';
+import type { QuestDb } from './quest/quest-db.ts';
+import type { SaveQueue } from './save-coordinator.ts';
+import type { PartyManager } from './world/party.ts';
+import type { World } from './world/world.ts';
+
+export interface ServerContext {
+  readonly config: Config;
+  readonly db: Kysely<DB>;
+  readonly pubData: PubData;
+  readonly world: World;
+  readonly formulas: Formulas;
+  readonly drops: DropTables;
+  readonly parties: PartyManager;
+  readonly quests: QuestDb;
+  readonly mailer: Mailer;
+  readonly emailLimiter: SlidingWindowLimiter;
+  readonly emailTemplates: EmailTemplates;
+  readonly authThrottle: AuthThrottle;
+  readonly shuttingDown: boolean;
+  readonly saves?: SaveQueue;
+  getPlayer(playerId: number): Player | undefined;
+  allPlayers(): Iterable<Player>;
+  globalLocked: boolean;
+  readonly startedAt: number;
+  readonly news: string[];
+  playerCount(): number;
+  isLoggedIn(accountId: number): boolean;
+  reserveAccount(accountId: number, playerId: number): boolean;
+  confirmAccount(accountId: number, playerId: number): void;
+  releaseAccount(accountId: number, playerId: number): void;
+}

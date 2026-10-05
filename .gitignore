@@ -1,0 +1,11 @@
+node_modules/
+admin-ui/dist/
+data/maps/*
+!data/maps/README.md
+data/pub/*
+!data/pub/README.md
+data/teaoh.db
+data/teaoh.db-*
+data/map_saves/
+.env
+*.log

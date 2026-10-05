@@ -1,0 +1,55 @@
+# teaoh server message strings (English).
+# The server loads config/lang/<server.lang>.toml from the directory that holds
+# the config file (TEAOH_CONFIG or config/teaoh.toml). Any key missing here, or
+# the whole file if it is missing or invalid, falls back to the built-in English
+# text. {placeholders} are replaced when the message is sent; unknown ones are
+# left as-is. Reload with the admin API reload target "config".
+
+# Broadcast when an admin freezes a player. {victim} player, {name} admin.
+announce_freeze = "Attention!! {victim} movement has been frozen -{name}"
+# Broadcast when an admin unfreezes a player. {victim} player, {name} admin.
+announce_unfreeze = "Attention!! {victim} movement has been released -{name}"
+# Broadcast on kick, ban and jail. {victim} player, {name} admin,
+# {method} one of "kicked", "banned", "jailed".
+announce_remove = "Attention!! {victim} has been removed from the game -{name} [{method}]"
+# Broadcast when an admin mutes an online player. {victim} player, {name} admin.
+announce_mute = "Attention!! {victim} has been muted -{name}"
+# Broadcast when an admin toggles global chat. {state} "on" or "off", {name} admin.
+announce_global = "World communications changed to: {state} -{name}"
+# Sent to a player who uses global chat while it is locked.
+global_locked = "This channel is temporarily disabled"
+
+# Wedding ceremony lines spoken by the priest. {name} and {partner} are the
+# couple, {delay} the seconds until the ceremony starts.
+wedding_start = "Very well, the ceremony will start in {delay} seconds."
+wedding_one = "we are here at the invitation of {partner} and {name}, who have come before us to join together in marriage."
+wedding_two = "their relationship is based on love, respect, and a determination to face the future together in health or sickness, in joy and sorrow."
+wedding_do_you = "{partner}, do you take {name} to be your partner, and promise to love, comfort and stay together as long as you both shall live?"
+# Said by each spouse when they accept.
+wedding_i_do = "Yes, i do"
+wedding_three = "Let these rings be given and received as a token of your affection, sincerity and trust in one another."
+wedding_four = "Please place these rings on eachothers finger.."
+wedding_five = "{partner} and {name} have consented together in marriage. And are now partners for as long you both shall live."
+wedding_end = "Congratulations to the couple!"
+# Said by the priest when the ceremony is aborted.
+wedding_error = "I'm sorry, something went wrong.."
+
+# Map evacuation countdown. {seconds} seconds left.
+evacuate_warning = "Warning! - please leave this map in {seconds} seconds or be sent to jail."
+evacuate_last_warning = "Last warning! - leave this map in {seconds} seconds or be sent to jail."
+
+# Scheduled shutdown countdown. {time} is e.g. "1 minute 30 seconds",
+# {seconds} the same time in seconds. An admin-supplied message is appended.
+shutdown_warning = "Warning! - the server will shut down in {time}."
+shutdown_cancelled = "The server shutdown has been cancelled."
+
+# Guild announcements (sent when guild.announce is true, except guild_disbanded
+# from the admin API, which is always sent). {member} the member, {recruiter}
+# the recruiter, {name} the leader or admin.
+guild_joined = "*** {member} has joined the guild. Recruited by {recruiter}."
+guild_left = "*** {member} has left the guild."
+guild_kicked = "*** {member} has left the guild. Kicked by {name}."
+guild_disbanded = "*** Guild has been disbanded by {name}."
+
+# Sent to arena players when the last opponent leaves.
+arena_aborted = "The event was aborted, last opponent left -server"

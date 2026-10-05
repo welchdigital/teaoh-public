@@ -1,0 +1,15 @@
+# Global drops: rolled for every NPC kill, merged with the NPC's own drop
+# table before the rarest-first roll.
+#
+# item_id    - item to drop
+# min_amount - minimum amount dropped
+# max_amount - maximum amount dropped
+# rate       - drop chance in percent (0-100)
+#
+# Example:
+#
+# [[drops]]
+# item_id = 1
+# min_amount = 1
+# max_amount = 1000
+# rate = 100

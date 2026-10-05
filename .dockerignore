@@ -1,0 +1,12 @@
+.git
+.env
+.env.*
+.reference
+.data-files
+.updates
+ghidra_12.1.2
+**/node_modules
+admin-ui/dist
+data
+docs
+*.log
